@@ -2,7 +2,8 @@
   "name": "upload_foto",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "nodemon NODE_ENV=production app.js"
   },
   "repository": "git+https://github.com/royal45mts/upload_foto.git",
   "keywords": [],
