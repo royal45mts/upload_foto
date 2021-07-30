@@ -146,6 +146,36 @@ module.exports = (app) => {
       });
     }
   });
+  app.get("/get_images/:id", async function (req, res, next) {
+    try {
+      const usersId = req.params.id;
+
+      const users = await model.upload_images.findOne({
+        where: {
+          id: usersId,
+        },
+      });
+      if (users.length !== 0) {
+        res.json({
+          status: "OK",
+          messages: "",
+          data: users,
+        });
+      } else {
+        res.json({
+          status: "ERROR",
+          messages: "EMPTY",
+          data: {},
+        });
+      }
+    } catch (err) {
+      res.json({
+        status: "ERROR",
+        messages: err.message,
+        data: {},
+      });
+    }
+  });
   app.patch("/:id", async function (req, res, next) {
     try {
       const usersId = req.params.id;
