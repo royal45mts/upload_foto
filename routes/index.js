@@ -108,9 +108,9 @@ module.exports = (app) => {
       });
     }
   });
-  app.put(
+  /* app.put(
     "/contact/upload"
-    /* multer({ storage: diskStorage }).single("photo"),
+    /!* multer({ storage: diskStorage }).single("photo"),
     (req, res) => {
       const file = req.file.path;
       if (!file) {
@@ -120,8 +120,8 @@ module.exports = (app) => {
         });
       }
       res.send(file);
-    }*/
-  );
+    }*!/
+  );*/
   app.get("/get_images", async function (req, res, next) {
     try {
       const users = await model.upload_images.findAll({});
@@ -178,19 +178,43 @@ module.exports = (app) => {
       });
     }
   });
-  app.delete("/:id", async function (req, res, next) {
+  app.delete("/get_images/:id", async function (req, res, next) {
     try {
       const usersId = req.params.id;
-      const users = await model.Todo.destroy({
+      const users_find = await model.upload_images.findOne({
         where: {
           id: usersId,
         },
       });
-      if (users) {
+      if (users_find.length !== 0) {
+        // deleted file
+        const length_foto = users_find.foto.toString().split("/");
+        await fs.unlinkSync(
+          path.join(
+            __dirname,
+            `../public/images/${length_foto
+              .splice(length_foto.length - 1, 1)
+              .join("")}`
+          )
+        );
+        // deleted mysql
+        const users = await model.upload_images.destroy({
+          where: {
+            id: usersId,
+          },
+        });
+        if (users) {
+          res.json({
+            status: "OK",
+            messages: "User berhasil dihapus",
+            data: users,
+          });
+        }
+      } else {
         res.json({
-          status: "OK",
-          messages: "User berhasil dihapus",
-          data: users,
+          status: "ERROR",
+          messages: "EMPTY",
+          data: {},
         });
       }
     } catch (err) {
