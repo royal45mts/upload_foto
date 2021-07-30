@@ -1,0 +1,12 @@
+# Use root/example as user/password credentials
+services:
+  web:
+    #    image: registry.gitlab.com/hexsagon/font_end
+    image: front_end:1
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - VUE_APP_APPLICATION_SERVER=http://sikapapi.sundareka.com/api
+    volumes:
+      - ./public/2:/app/public
