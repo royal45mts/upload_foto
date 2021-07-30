@@ -25,7 +25,9 @@ module.exports = (app) => {
     return response.json(db);
   });
   app.post("/upload_images", (request, response) => {
-    const images = request.body.img;
+    const images = request;
+    console.log(images);
+
     let db = [
       {
         id: 1,
@@ -44,18 +46,17 @@ module.exports = (app) => {
         magic: 100,
       },
     ];
-    const base64 = images.toString().replace(/^data:image\/png;base64,/, "");
+    /* const base64 = images.toString().replace(/^data:image\/png;base64,/, "");
     const location = path.join(__dirname, "../public/images/out.png");
     // change image base64 to buffer
     const arrarbuffer = new Buffer.from(base64, "base64");
     fs.writeFile(location, arrarbuffer, (err) => {
       console.log(err);
-    });
+    });*/
 
     return response.json(db);
   });
   app.post("/test", async (req, res, next) => {
-    console.log(req);
     try {
       const { name, email, gender, phoneNumber } = req.body;
       const users = await model.users.create({

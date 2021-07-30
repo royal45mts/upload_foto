@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       id_user: {
         type: DataTypes.INTEGER,
-        foreignKey: true,
       },
     },
     {
