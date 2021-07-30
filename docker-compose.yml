@@ -7,6 +7,12 @@ services:
     ports:
       - 3000:3000
     environment:
-      - VUE_APP_APPLICATION_SERVER=http://sikapapi.sundareka.com/api
+      - HOST=172.18.64.1
+      - PASSWORD=null
+      - USERNAME=root
+      - DATABASE=test_upload_gambar
+      - PORT_MYSQL=3306
+      - SERVER=http://localhost:3000/
+      - MYSQL=mysql
     volumes:
-      - ./public/2:/app/public
+      - ./public2:/app/public
