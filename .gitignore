@@ -3,7 +3,7 @@ package-lock.json
 .idea
 # Environment variables
 .env
-
+public/images
 # Logs
 logs
 *.log
