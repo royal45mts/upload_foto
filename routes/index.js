@@ -1,7 +1,19 @@
 const fs = require("fs");
-const path = require("path");
 const model = require("../models/index");
-
+const multer = require("multer");
+const path = require("path");
+const diskStorage = multer.diskStorage({
+  // konfigurasi folder penyimpanan file
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, "./public/images"));
+  },
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
 module.exports = (app) => {
   app.get("/get_images", (request, response) => {
     let db = [
