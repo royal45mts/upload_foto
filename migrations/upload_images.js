@@ -11,19 +11,16 @@ module.exports = {
       foto: {
         type: Sequelize.STRING,
       },
-      test: {
-        type: Sequelize.INTEGER,
-      },
       /*id_user: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: "users",
-          },
-          key: "id",
-          allowNull: false,
-        },
-      },*/
+              type: Sequelize.INTEGER,
+              references: {
+                model: {
+                  tableName: "users",
+                },
+                key: "id",
+                allowNull: false,
+              },
+            },*/
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
