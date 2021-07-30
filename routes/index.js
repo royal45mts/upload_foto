@@ -51,11 +51,11 @@ module.exports = (app) => {
     fs.writeFile(location, arrarbuffer, (err) => {
       console.log(err);
     });
-    console.log(fs.existsSync(location));
 
     return response.json(db);
   });
-  app.post("/test", async (res, req) => {
+  app.post("/test", async (req, res, next) => {
+    console.log(req);
     try {
       const { name, email, gender, phoneNumber } = req.body;
       const users = await model.users.create({
