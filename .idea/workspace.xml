@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d83b1d2-0e20-44c0-b647-57eeac6a71e4" name="Changes" comment="add: sequelize generate table">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/upload_images.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/upload_images.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/upload_images.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/upload_images.js" afterDir="false" />
-    </list>
+    <list default="true" id="6d83b1d2-0e20-44c0-b647-57eeac6a71e4" name="Changes" comment="add: sequelize generate table" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +52,7 @@
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../boilerplate" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -97,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627627710625</updated>
-      <workItem from="1627627712049" duration="14144000" />
+      <workItem from="1627627712049" duration="14531000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1627627878082</created>
@@ -211,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627640836080</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add: sequelize generate table">
+      <created>1627644589560</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1627644589560</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
