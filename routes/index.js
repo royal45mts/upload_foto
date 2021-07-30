@@ -15,27 +15,6 @@ const diskStorage = multer.diskStorage({
   },
 });
 module.exports = (app) => {
-  app.get("/get_images", (request, response) => {
-    let db = [
-      {
-        id: 1,
-        name: "Warior",
-        attack: 100,
-        defence: 50,
-        agility: 30,
-        magic: 0,
-      },
-      {
-        id: 2,
-        name: "Mage",
-        attack: 10,
-        defence: 20,
-        agility: 50,
-        magic: 100,
-      },
-    ];
-    return response.json(db);
-  });
   app.post("/upload_images", (req, res) => {
     try {
       multer({ storage: diskStorage }).single("photo"),
@@ -143,4 +122,83 @@ module.exports = (app) => {
       res.send(file);
     }*/
   );
+  app.get("/get_images", async function (req, res, next) {
+    try {
+      const users = await model.upload_images.findAll({});
+      if (users.length !== 0) {
+        res.json({
+          status: "OK",
+          messages: "",
+          data: users,
+        });
+      } else {
+        res.json({
+          status: "ERROR",
+          messages: "EMPTY",
+          data: {},
+        });
+      }
+    } catch (err) {
+      res.json({
+        status: "ERROR",
+        messages: err.message,
+        data: {},
+      });
+    }
+  });
+  app.patch("/:id", async function (req, res, next) {
+    try {
+      const usersId = req.params.id;
+      const { name, email, gender, phoneNumber } = req.body;
+      const users = await model.users.update(
+        {
+          name,
+          email,
+          gender,
+          phone_number: phoneNumber,
+        },
+        {
+          where: {
+            id: usersId,
+          },
+        }
+      );
+      if (users) {
+        res.json({
+          status: "OK",
+          messages: "User berhasil diupdate",
+          data: users,
+        });
+      }
+    } catch (err) {
+      res.status(400).json({
+        status: "ERROR",
+        messages: err.message,
+        data: {},
+      });
+    }
+  });
+  app.delete("/:id", async function (req, res, next) {
+    try {
+      const usersId = req.params.id;
+      const users = await model.Todo.destroy({
+        where: {
+          id: usersId,
+        },
+      });
+      if (users) {
+        res.json({
+          status: "OK",
+          messages: "User berhasil dihapus",
+          data: users,
+        });
+      }
+    } catch (err) {
+      res.status(400).json({
+        status: "ERROR",
+        messages: err.message,
+        data: {},
+      });
+    }
+  });
 };
