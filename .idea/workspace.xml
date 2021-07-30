@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d83b1d2-0e20-44c0-b647-57eeac6a71e4" name="Changes" comment="add: sequelize">
+    <list default="true" id="6d83b1d2-0e20-44c0-b647-57eeac6a71e4" name="Changes" comment="add: sequelize generate table">
+      <change afterPath="$PROJECT_DIR$/migrations/upload_images.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/upload_images.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,6 +72,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Project\Api\upload_foto\models" />
+      <recent name="E:\Project\Api\upload_foto\migrations" />
       <recent name="E:\Project\Api\upload_foto" />
     </key>
   </component>
@@ -94,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627627710625</updated>
-      <workItem from="1627627712049" duration="11266000" />
+      <workItem from="1627627712049" duration="12083000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1627627878082</created>
@@ -194,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627639784168</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add: sequelize generate table">
+      <created>1627640125597</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1627640125597</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +230,8 @@
     <MESSAGE value="add: api get" />
     <MESSAGE value="add: mysql" />
     <MESSAGE value="add: sequelize" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: sequelize" />
+    <MESSAGE value="add: sequelize generate table" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: sequelize generate table" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
