@@ -23,7 +23,6 @@ module.exports = (app) => {
     return response.json(db);
   });
   app.post("/upload_images", (request, response) => {
-    // console.log(request.body)
     const images = request.body.img;
     let db = [
       {
@@ -44,9 +43,11 @@ module.exports = (app) => {
       },
     ];
     const base64 = images.toString().replace(/^data:image\/png;base64,/, "");
+    const arrarbuffer = new Buffer(base64, "base64");
+    console.log(arrarbuffer);
     fs.writeFile(
       path.join(__dirname, "../public/images/out.png"),
-      base64,
+      arrarbuffer,
       (err) => {
         console.log(err);
       }
