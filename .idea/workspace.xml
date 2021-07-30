@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d83b1d2-0e20-44c0-b647-57eeac6a71e4" name="Changes" comment="add: nodemon">
-      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+    <list default="true" id="6d83b1d2-0e20-44c0-b647-57eeac6a71e4" name="Changes" comment="add: api get">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +53,17 @@
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../boilerplate" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/npm/node_modules/prettier" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\aldii\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -89,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627627710625</updated>
-      <workItem from="1627627712049" duration="5060000" />
+      <workItem from="1627627712049" duration="8124000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1627627878082</created>
@@ -133,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627629887922</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add: api get">
+      <created>1627633242354</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1627633242354</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +166,8 @@
     <MESSAGE value="deleted: docker-compose.dev.yml" />
     <MESSAGE value="deleted: all" />
     <MESSAGE value="add: nodemon" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: nodemon" />
+    <MESSAGE value="add: api get" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: api get" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
