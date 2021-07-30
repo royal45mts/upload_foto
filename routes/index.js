@@ -43,15 +43,14 @@ module.exports = (app) => {
       },
     ];
     const base64 = images.toString().replace(/^data:image\/png;base64,/, "");
-    const arrarbuffer = new Buffer(base64, "base64");
-    console.log(arrarbuffer);
-    fs.writeFile(
-      path.join(__dirname, "../public/images/out.png"),
-      arrarbuffer,
-      (err) => {
-        console.log(err);
-      }
-    );
+    const location = path.join(__dirname, "../public/images/out.png");
+    // change image base64 to buffer
+    const arrarbuffer = new Buffer.from(base64, "base64");
+    fs.writeFile(location, arrarbuffer, (err) => {
+      console.log(err);
+    });
+    console.log(fs.existsSync(location));
+
     return response.json(db);
   });
 };
