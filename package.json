@@ -2,7 +2,7 @@
   "name": "upload_foto",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "repository": "git+https://github.com/royal45mts/upload_foto.git",
   "keywords": [],
