@@ -1,5 +1,7 @@
 const fs = require("fs");
 const path = require("path");
+const model = require("../models/index");
+
 module.exports = (app) => {
   app.get("/get_images", (request, response) => {
     let db = [
@@ -52,5 +54,29 @@ module.exports = (app) => {
     console.log(fs.existsSync(location));
 
     return response.json(db);
+  });
+  app.post("/test", async (res, req) => {
+    try {
+      const { name, email, gender, phoneNumber } = req.body;
+      const users = await model.users.create({
+        name,
+        email,
+        gender,
+        phone_number: phoneNumber,
+      });
+      if (users) {
+        res.status(201).json({
+          status: "OK",
+          messages: "User berhasil ditambahkan",
+          data: users,
+        });
+      }
+    } catch (err) {
+      res.status(400).json({
+        status: "ERROR",
+        messages: err.message,
+        data: {},
+      });
+    }
   });
 };
