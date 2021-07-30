@@ -5,7 +5,7 @@ const path = require("path");
 const diskStorage = multer.diskStorage({
   // konfigurasi folder penyimpanan file
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, "./public/images"));
+    cb(null, path.join(__dirname, "../public/images"));
   },
   filename: function (req, file, cb) {
     cb(
@@ -92,4 +92,18 @@ module.exports = (app) => {
       });
     }
   });
+  app.put(
+    "/contact/upload",
+    multer({ storage: diskStorage }).single("photo"),
+    (req, res) => {
+      const file = req.file.path;
+      if (!file) {
+        res.status(400).send({
+          status: false,
+          data: "No File is selected.",
+        });
+      }
+      res.send(file);
+    }
+  );
 };
