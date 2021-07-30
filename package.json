@@ -1,5 +1,23 @@
 {
+  "name": "upload_foto",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/royal45mts/upload_foto.git",
+  "keywords": [],
+  "author": "aldiiskandar4@gmail.com <Mh2gm88a--FfqMnUUKFZ>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/royal45mts/upload_foto/issues"
+  },
+  "homepage": "https://github.com/royal45mts/upload_foto#readme",
+  "description": "",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
