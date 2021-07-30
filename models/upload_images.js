@@ -17,7 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       foto: DataTypes.STRING,
       test: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
+      },
+      id_user: {
+        type: DataTypes.INTEGER,
+        foreignKey: true,
       },
     },
     {

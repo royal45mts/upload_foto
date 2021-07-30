@@ -12,8 +12,17 @@ module.exports = {
         type: Sequelize.STRING,
       },
       test: {
-        primaryKey: true,
         type: Sequelize.INTEGER,
+      },
+      id_user: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "users",
+          },
+          key: "id",
+          allowNull: false,
+        },
       },
     });
   },
