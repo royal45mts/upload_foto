@@ -24,9 +24,6 @@ $ yarn install
 # build for production and launch server
 $ yarn start
 
-# generate static project
-$ yarn generate
-
 # generate DATABASE
 seaquelize db:migrate
 
