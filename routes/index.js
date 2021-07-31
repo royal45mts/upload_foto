@@ -49,7 +49,7 @@ module.exports = (app) => {
     return response.json(db);
   });
   app.put(
-    "/upload_images",
+    "/get_images",
     multer({ storage: diskStorage }).single("img"),
     async (req, res) => {
       try {

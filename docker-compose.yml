@@ -2,7 +2,7 @@
 services:
   web:
     #    image: registry.gitlab.com/hexsagon/font_end
-    image: front_end:1
+    image: back_end:1
     restart: always
     ports:
       - 3000:3000
