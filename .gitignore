@@ -4,6 +4,7 @@ package-lock.json
 # Environment variables
 .env
 public/images
+public2/images
 # Logs
 logs
 *.log
