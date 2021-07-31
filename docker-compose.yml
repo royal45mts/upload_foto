@@ -15,4 +15,4 @@ services:
       - SERVER=http://localhost:3000/
       - MYSQL=mysql
     volumes:
-      - ./public:/app/public
+      - /public:/app/public
