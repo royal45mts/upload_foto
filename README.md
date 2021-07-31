@@ -1,6 +1,5 @@
 # UPLOAD IMAGE
 
-
 ## .env
 
 ```bash
@@ -32,8 +31,8 @@ $ yarn generate
 seaquelize db:migrate
 
 ```
-# rest api
 
+# rest api
 
 ```bash
 # get all
@@ -61,4 +60,3 @@ $ docker-compose up -d
 
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
