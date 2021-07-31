@@ -7,7 +7,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      - HOST=172.18.64.1
+      - HOST=172.22.144.1
       - PASSWORD=null
       - USERNAME=root
       - DATABASE=test_upload_gambar
@@ -15,4 +15,4 @@ services:
       - SERVER=http://localhost:3000/
       - MYSQL=mysql
     volumes:
-      - /public2:/app/public
+      - ./public:/app/public
