@@ -3,7 +3,7 @@ const bodyparse = require("body-parser");
 const compression = require("compression");
 const cors = require("cors");
 const app = express();
-app.use(bodyparse.json());
+app.use(bodyparse.json({ limit: "50mb" }));
 app.use(compression());
 require("dotenv").config();
 app.use(cors());
