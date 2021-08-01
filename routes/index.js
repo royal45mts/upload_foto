@@ -19,7 +19,6 @@ module.exports = (app) => {
     // const base64Data = req.body.img.replace(/^data:image\/png;base64,/, "");
     try {
       // const file = req.file.path;
-      console.log(req.body);
       const imgbase64 = req.body.img.replace(/^data:image\/png:base64,/, "");
       const buffer = new Buffer.from(imgbase64, "base64");
       console.log(buffer);
@@ -27,7 +26,7 @@ module.exports = (app) => {
       fs.writeFile(location, buffer, (err) => {
         res.status(400).json({
           status: "ERROR",
-          messages: err.message,
+          messages: err,
           data: {},
         });
       });
