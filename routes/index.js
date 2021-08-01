@@ -15,20 +15,38 @@ const diskStorage = multer.diskStorage({
   },
 });
 module.exports = (app) => {
-  app.post("/upload_images", (req, res) => {
+  app.put("/upload_images_image", async (req, res) => {
+    // const base64Data = req.body.img.replace(/^data:image\/png;base64,/, "");
     try {
-      multer({ storage: diskStorage }).single("photo"),
-        async (req_upload, res_upload) => {
-          const file = req.file.path;
+      // const file = req.file.path;
+      console.log(req.body);
+      const imgbase64 = req.body.img.replace(/^data:image\/png:base64,/, "");
+      const buffer = new Buffer.from(imgbase64, "base64");
+      console.log(buffer);
+      const location = path.join(__dirname, "../public/images/tes.png");
+      fs.writeFile(location, buffer, (err) => {
+        res.status(400).json({
+          status: "ERROR",
+          messages: err.message,
+          data: {},
+        });
+      });
+      // fs.writeSync()
+      return;
+      const users = await model.upload_images.create({
+        foto:
+          typeof req.file.filename === "string"
+            ? `${process.env.SERVER}public/img/test.png`
+            : null,
+      });
 
-          if (!file) {
-            req_upload.status(400).send({
-              status: false,
-              data: "No File is selected.",
-            });
-          }
-          res.send(file);
-        };
+      if (users) {
+        res.status(201).json({
+          status: "OK",
+          messages: "User berhasil ditambahkan",
+          data: users,
+        });
+      }
     } catch (err) {
       res.status(400).json({
         status: "ERROR",
@@ -36,17 +54,6 @@ module.exports = (app) => {
         data: {},
       });
     }
-
-    // base64 upload
-    /* const base64 = images.toString().replace(/^data:image\/png;base64,/, "");
-    const location = path.join(__dirname, "../public/images/out.png");
-    // change image base64 to buffer
-    const arrarbuffer = new Buffer.from(base64, "base64");
-    fs.writeFile(location, arrarbuffer, (err) => {
-      console.log(err);
-    });*/
-
-    return response.json(db);
   });
   app.put(
     "/get_images",
